@@ -1,0 +1,36 @@
+<!--
+  @description       : 
+  @author            : Satish Chandrashekar
+  @group             : 
+  @last modified on  : 03-03-2021
+  @last modified by  : Satish Chandrashekar
+  Modifications Log 
+  Ver   Date         Author                 Modification
+  1.0   03-03-2021   Satish Chandrashekar   Initial Version
+-->
+<template>
+    <h1 class="slds-text-heading_large">Verifications Checklist</h1>
+    <br>
+    <h2 class="slds-text-heading_small">All available reports are listed below, including up-to-date reports already on file</h2>
+    <br>
+    <h2 class="slds-text-heading_small"><strong>Please select the reports you'd like to run, or re-run, at this time. Once you've made your selection(s), run the selected reports to view the results</strong></h2>
+    <br>
+    <h3 class="slds-var-m-vertical_small">Total Rows:{rowt}</h3>
+    <h3 class="slds-var-m-vertical_small">Selcted Rows:{srowt}</h3>
+    <br>
+    <lightning-card title="Related Entities">
+       <div style="height: 300px;">
+            <lightning-datatable
+                key-field="Id"
+                data={entlist}
+                columns={columns}
+                selected-rows={selectedRows}
+                onrowselection={handleRowSelect}
+                column-widths-mode="auto"
+                >
+             </lightning-datatable>
+         </div>
+    </lightning-card>
+    <hr></hr>
+    <lightning-button variant="brand" label="Run Verification" title="RunVerification" onclick={handleAction} class="slds-var-m-left_small"></lightning-button>
+</template> 
